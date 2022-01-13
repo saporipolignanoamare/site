@@ -1,6 +1,8 @@
 <script lang="ts">
 	import { client } from '$lib/client';
 
+	import HomeCategory from '$lib/components/homeCategory.svelte';
+
 	//
 
 	async function getCategories() {
@@ -32,22 +34,53 @@
 
 <!--  -->
 
+<div class="heading">
+	<h1>Sapori</h1>
+	<h2>Olive, taralli, frutta secca e altre bontà da Polignano a Mare</h2>
+</div>
+
 {#await promise}
 	awaiting
 {:then categories}
-	{#each categories as category}
-		<div>
-			<img src={category.immagine} alt={category.name} />
-			<a href="/{category.slug}">{category.name}</a>
-		</div>
-	{/each}
+	<div class="categories">
+		{#each categories as category}
+			<HomeCategory {category} />
+		{/each}
+	</div>
 {:catch error}
 	{JSON.parse(error.message).message}
 {/await}
 
 <!--  -->
 <style>
-	img {
-		max-height: 200px;
+	h1 {
+		font-size: 70px;
+		font-weight: 700;
+	}
+
+	h2 {
+		font-weight: 500;
+		font-size: 20px;
+	}
+
+	.heading {
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		background-color: olive;
+		padding: 50px;
+	}
+
+	.heading > h2 {
+		text-align: center;
+	}
+
+	.heading > * {
+		color: white;
+	}
+
+	.categories {
+		padding: 15px 10px;
 	}
 </style>
