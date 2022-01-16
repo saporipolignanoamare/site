@@ -1,0 +1,27 @@
+:root {
+	--accent: olive;
+}
+
+@font-face {
+	font-family: Affogato;
+	font-weight: 500;
+	src: url(./fonts/Affogato-Medium.otf);
+}
+
+@font-face {
+	font-family: Affogato;
+	font-weight: 700;
+	src: url(./fonts/Affogato-Bold.otf);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	font-family: Affogato;
+}
+
+html,
+body,
+div#svelte {
+	padding: 0;
+}
