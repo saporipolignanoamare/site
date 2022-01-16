@@ -15,13 +15,6 @@ const config = {
 			precompress: false
 		}),
 
-		// This should fix the build error
-		vite: {
-			ssr: {
-				noExternal: ['contentful']
-			}
-		},
-
 		// hydrate the <div id="svelte"> element in src/app.html
 		target: '#svelte'
 	}

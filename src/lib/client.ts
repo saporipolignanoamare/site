@@ -1,5 +1,15 @@
-import pkg from 'contentful';
-const { createClient } = pkg;
+/**
+ * BUILD IMPORT
+ */
+// import pkg from 'contentful';
+// const { createClient } = pkg;
+
+/**
+ * DEV IMPORT
+ */
+import { createClient } from 'contentful';
+
+//
 
 export const client = createClient({
 	space: '9cbraljlhlcw',
