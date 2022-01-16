@@ -24,7 +24,7 @@
 		flex-flow: column nowrap;
 
 		padding: 20px;
-		border-radius: 30px;
+		border-radius: var(--card-radius);
 
 		background: linear-gradient(rgba(50, 50, 0, 0.4), rgba(50, 50, 0, 0.4)), var(--bg);
 		background-size: cover;

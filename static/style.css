@@ -1,6 +1,26 @@
 :root {
 	--accent: olive;
+
+	--grid-columns: repeat(2, 1fr);
+	--spacing: 20px;
+	--card-radius: 20px;
 }
+
+@media screen and (min-width: 768px) {
+	:root {
+		--grid-columns: repeat(3, 1fr);
+		--spacing: 30px;
+		--card-radius: 30px;
+	}
+}
+
+/* @media screen and (min-width: 1024px) {
+	:root {
+		--gr
+	}
+} */
+
+/*  */
 
 @font-face {
 	font-family: Affogato;
@@ -24,4 +44,16 @@ html,
 body,
 div#svelte {
 	padding: 0;
+}
+
+.max-width {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: var(--grid-columns);
+	padding: var(--spacing);
+	gap: var(--spacing);
 }

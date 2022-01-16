@@ -54,7 +54,7 @@
 {#await promise}
 	<LoadingScreen />
 {:then products}
-	<div class="products">
+	<div class="max-width products grid">
 		{#each products as product}
 			<Product {product} />
 		{/each}
@@ -62,12 +62,3 @@
 {:catch error}
 	{JSON.parse(error.message).message}
 {/await}
-
-<style>
-	.products {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 20px;
-		padding: 20px;
-	}
-</style>

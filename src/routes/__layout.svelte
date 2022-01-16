@@ -7,25 +7,27 @@
 </script>
 
 <div class="navbar">
-	<!-- Left side -->
-	<div class="side side-right">
-		{#if $page.url.pathname != '/'}
-			<NavLink href="/" size="38px">
-				<Home24 style="fill: white" />
-			</NavLink>
-		{/if}
-		<a href="/" class="title">Sapori</a>
-	</div>
+	<div class="navbar-content max-width">
+		<!-- Left side -->
+		<div class="side side-right">
+			{#if $page.url.pathname != '/'}
+				<NavLink href="/" size="38px">
+					<Home24 style="fill: white" />
+				</NavLink>
+			{/if}
+			<a href="/" class="title">Sapori</a>
+		</div>
 
-	<!-- Right side -->
-	<!-- <div class="side-right">
-		<NavLink href="/" size="38px">
-			<p class="flag">🇬🇧</p>
-		</NavLink>
-		<NavLink href="/" size="38px">
-			<Menu24 style="fill: white" />
-		</NavLink>
-	</div> -->
+		<!-- Right side -->
+		<!-- <div class="side-right">
+			<NavLink href="/" size="38px">
+				<p class="flag">🇬🇧</p>
+			</NavLink>
+			<NavLink href="/" size="38px">
+				<Menu24 style="fill: white" />
+			</NavLink>
+		</div> -->
+	</div>
 </div>
 <slot />
 
@@ -33,13 +35,16 @@
 	.navbar {
 		width: 100%;
 		background-color: var(--accent);
-		display: flex;
-		flex-flow: row nowrap;
 		position: sticky;
 		top: 0;
 		z-index: 99;
-		padding: 10px 20px;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	}
+
+	.navbar-content {
+		padding: calc(var(--spacing) / 2) var(--spacing);
+		display: flex;
+		flex-flow: row nowrap;
 	}
 
 	.title {

@@ -47,11 +47,13 @@
 {#await promise}
 	<LoadingScreen />
 {:then categories}
-	<h2>Scopri i nostri prodotti! 👇</h2>
-	<div class="categories">
-		{#each categories as category}
-			<HomeCategory {category} />
-		{/each}
+	<div class="max-width">
+		<h2>Scopri i nostri prodotti! 👇</h2>
+		<div class="categories grid">
+			{#each categories as category}
+				<HomeCategory {category} />
+			{/each}
+		</div>
 	</div>
 {:catch error}
 	{JSON.parse(error.message).message}
@@ -70,7 +72,7 @@
 		color: var(--accent);
 		font-weight: 400;
 		text-align: center;
-		margin-top: 20px;
+		margin-top: var(--spacing);
 	}
 
 	.heading {
@@ -80,12 +82,5 @@
 		align-items: center;
 		background-color: var(--accent);
 		padding: 50px;
-	}
-
-	.categories {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		padding: 20px;
-		gap: 20px;
 	}
 </style>
