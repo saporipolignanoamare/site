@@ -1,3 +1,7 @@
+:root {
+	--accent: olive;
+}
+
 @font-face {
 	font-family: Affogato;
 	font-weight: 500;
@@ -17,6 +21,7 @@
 }
 
 html,
-body {
+body,
+div#svelte {
 	padding: 0;
 }

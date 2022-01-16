@@ -2,6 +2,9 @@
 	import { page } from '$app/stores';
 	import { client } from '$lib/client';
 
+	import Product from '$lib/components/product.svelte';
+	import LoadingScreen from '$lib/components/loadingScreen.svelte';
+
 	//
 
 	async function getProducts() {
@@ -49,15 +52,22 @@
 </script>
 
 {#await promise}
-	awaiting
+	<LoadingScreen />
 {:then products}
-	{#each products as product}
-		<div>
-			<p>{product.name}</p>
-			<p>{product.prezzo} €/kg</p>
-			<img src={product.foto} alt={product.name} />
-		</div>
-	{/each}
+	<div class="products">
+		{#each products as product}
+			<Product {product} />
+		{/each}
+	</div>
 {:catch error}
 	{JSON.parse(error.message).message}
 {/await}
+
+<style>
+	.products {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+		padding: 20px;
+	}
+</style>

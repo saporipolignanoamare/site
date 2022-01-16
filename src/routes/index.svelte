@@ -2,6 +2,7 @@
 	import { client } from '$lib/client';
 
 	import HomeCategory from '$lib/components/homeCategory.svelte';
+	import LoadingScreen from '$lib/components/loadingScreen.svelte';
 
 	//
 
@@ -21,10 +22,15 @@
 			return {
 				name: item.fields.nomeCategoria,
 				slug: item.fields.slug,
-				immagine: item.fields.immagine.fields.file.url
+				immagine: item.fields.immagine.fields.file.url,
+				ordine: item.fields.ordine
 			};
 		});
-		return categories;
+		return categories.sort(sortCategories);
+	}
+
+	function sortCategories(a, b) {
+		return a.ordine - b.ordine;
 	}
 
 	//
@@ -35,13 +41,13 @@
 <!--  -->
 
 <div class="heading">
-	<h1>Sapori</h1>
-	<h2>Olive, taralli, frutta secca e altre bontà da Polignano a Mare</h2>
+	<h1>Olive, taralli, frutta secca e altre bontà da Polignano a Mare</h1>
 </div>
 
 {#await promise}
-	awaiting
+	<LoadingScreen />
 {:then categories}
+	<h2>Scopri i nostri prodotti! 👇</h2>
 	<div class="categories">
 		{#each categories as category}
 			<HomeCategory {category} />
@@ -54,13 +60,17 @@
 <!--  -->
 <style>
 	h1 {
-		font-size: 70px;
-		font-weight: 700;
+		font-size: 25px;
+		font-weight: 400;
+		text-align: center;
+		color: white;
 	}
 
 	h2 {
-		font-weight: 500;
-		font-size: 20px;
+		color: var(--accent);
+		font-weight: 400;
+		text-align: center;
+		margin-top: 20px;
 	}
 
 	.heading {
@@ -68,19 +78,14 @@
 		flex-flow: column nowrap;
 		justify-content: center;
 		align-items: center;
-		background-color: olive;
+		background-color: var(--accent);
 		padding: 50px;
 	}
 
-	.heading > h2 {
-		text-align: center;
-	}
-
-	.heading > * {
-		color: white;
-	}
-
 	.categories {
-		padding: 15px 10px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		padding: 20px;
+		gap: 20px;
 	}
 </style>
