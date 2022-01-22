@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { t, locale } from '$lib/translations';
 	import { client } from '$lib/client';
 
 	import HomeCategory from '$lib/components/homeCategory.svelte';
@@ -8,8 +9,8 @@
 
 	async function getCategories() {
 		const data = await client.getEntries({
-			content_type: 'categoria'
-			// locale: 'en-US'
+			content_type: 'categoria',
+			locale: $locale
 		});
 
 		return extractCategories(data);
@@ -35,20 +36,24 @@
 
 	//
 
-	let promise = getCategories();
+	let promise;
+	$: {
+		$locale;
+		promise = getCategories();
+	}
 </script>
 
 <!--  -->
 
 <div class="heading">
-	<h1>Olive, taralli, frutta secca e altre bontà da Polignano a Mare</h1>
+	<h1>{$t('home.intro')}</h1>
 </div>
 
 {#await promise}
 	<LoadingScreen />
 {:then categories}
 	<div class="max-width">
-		<h2>Scopri i nostri prodotti! 👇</h2>
+		<h2>{$t('home.cta')}</h2>
 		<div class="categories grid">
 			{#each categories as category}
 				<HomeCategory {category} />

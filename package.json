@@ -32,6 +32,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "^1.0.0-next.26",
-		"contentful": "^9.1.5"
+		"contentful": "^9.1.5",
+		"sveltekit-i18n": "^1.5.3"
 	}
 }

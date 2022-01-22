@@ -20,6 +20,7 @@
 		height: 100%;
 		border-radius: var(--card-radius);
 		overflow: hidden;
+		background-color: rgba(0, 0, 0, 0.1);
 	}
 
 	img {
