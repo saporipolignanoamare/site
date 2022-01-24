@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { t, locale } from '$lib/translations';
 	import { page } from '$app/stores';
-	import { client } from '$lib/client';
+	import { client } from '$lib/requestsUtils/client';
 	import { category } from '$lib/stores';
 
 	import Product from '$lib/components/product.svelte';
