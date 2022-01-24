@@ -1,39 +1,8 @@
 <script lang="ts">
-	import { t, locale } from '$lib/translations';
-	import { client } from '$lib/client';
-
-	import type { ICategoria } from '$lib/types';
+	import { t } from '$lib/translations';
+	import { categories } from '$lib/stores';
 
 	import HomeCategory from '$lib/components/homeCategory.svelte';
-	import LoadingScreen from '$lib/components/loadingScreen.svelte';
-
-	//
-
-	async function getCategories(): Promise<Array<ICategoria>> {
-		// Requesting categories
-		const data = await client.getEntries({
-			content_type: 'categoria',
-			locale: $locale
-		});
-		// Casting type
-		let categories = data.items as Array<ICategoria>;
-		// Sorting
-		categories = categories.sort(sortCategories);
-		//
-		return categories;
-	}
-
-	function sortCategories(a: ICategoria, b: ICategoria) {
-		return a.fields.ordine - b.fields.ordine;
-	}
-
-	//
-
-	let promise;
-	$: {
-		$locale;
-		promise = getCategories();
-	}
 </script>
 
 <!--  -->
@@ -42,20 +11,14 @@
 	<h1>{$t('home.intro')}</h1>
 </div>
 
-{#await promise}
-	<LoadingScreen />
-{:then categories}
-	<div class="max-width">
-		<h2>{$t('home.cta')}</h2>
-		<div class="categories grid">
-			{#each categories as category}
-				<HomeCategory {category} />
-			{/each}
-		</div>
+<div class="max-width">
+	<h2>{$t('home.cta')}</h2>
+	<div class="categories grid">
+		{#each $categories as category}
+			<HomeCategory {category} />
+		{/each}
 	</div>
-{:catch error}
-	{JSON.parse(error.message).message}
-{/await}
+</div>
 
 <!--  -->
 <style>
