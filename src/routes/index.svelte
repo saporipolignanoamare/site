@@ -2,36 +2,29 @@
 	import { t, locale } from '$lib/translations';
 	import { client } from '$lib/client';
 
+	import type { ICategoria } from '$lib/types';
+
 	import HomeCategory from '$lib/components/homeCategory.svelte';
 	import LoadingScreen from '$lib/components/loadingScreen.svelte';
 
 	//
 
-	async function getCategories() {
+	async function getCategories(): Promise<Array<ICategoria>> {
+		// Requesting categories
 		const data = await client.getEntries({
 			content_type: 'categoria',
 			locale: $locale
 		});
-
-		return extractCategories(data);
+		// Casting type
+		let categories = data.items as Array<ICategoria>;
+		// Sorting
+		categories = categories.sort(sortCategories);
+		//
+		return categories;
 	}
 
-	//
-
-	function extractCategories(data) {
-		const categories = data.items.map((item) => {
-			return {
-				name: item.fields.nomeCategoria,
-				slug: item.fields.slug,
-				immagine: item.fields.immagine.fields.file.url,
-				ordine: item.fields.ordine
-			};
-		});
-		return categories.sort(sortCategories);
-	}
-
-	function sortCategories(a, b) {
-		return a.ordine - b.ordine;
+	function sortCategories(a: ICategoria, b: ICategoria) {
+		return a.fields.ordine - b.fields.ordine;
 	}
 
 	//

@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let category;
+	import type { ICategoria } from '$lib/types';
+
+	export let category: ICategoria;
 
 	//
 
@@ -7,9 +9,9 @@
 </script>
 
 <SquareDiv width="100%">
-	<a href="/{category.slug}" style="--bg: url({category.immagine})">
+	<a href="/{category.fields.slug}" style="--bg: url({category.fields.immagine.fields.file.url})">
 		<p class="category">
-			{category.name}
+			{category.fields.nomeCategoria}
 		</p>
 		<p class="arrow">→</p>
 	</a>
