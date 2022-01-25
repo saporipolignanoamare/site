@@ -1,5 +1,5 @@
 import { client } from '$lib/requestsUtils/client';
-import type { ICategoria } from '$lib/types';
+import type { ICategoria, IProdotto } from '$lib/types';
 
 //
 
@@ -19,4 +19,20 @@ export async function getCategories(locale: string): Promise<Array<ICategoria>> 
 
 function sortCategories(a: ICategoria, b: ICategoria) {
 	return a.fields.ordine - b.fields.ordine;
+}
+
+//
+
+export async function getProductsByCategory(
+	category: ICategoria,
+	locale: string
+): Promise<Array<IProdotto>> {
+	// Requesting categories
+	const data = await client.getEntries({
+		content_type: 'prodotto',
+		'fields.categoria.sys.id': category.sys.id,
+		locale
+	});
+	// Casting type
+	return data.items as Array<IProdotto>;
 }

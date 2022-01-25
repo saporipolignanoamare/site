@@ -1,5 +1,7 @@
 <script lang="ts">
-	export let product;
+	import type { IProdotto } from '$lib/types';
+
+	export let product: IProdotto;
 
 	import SquareDiv from './squareDiv.svelte';
 </script>
@@ -7,11 +9,11 @@
 <div class="product">
 	<SquareDiv width="100%">
 		<div class="img-container">
-			<img src={product.foto} alt={product.name} />
+			<img src={product.fields.foto.fields.file.url} alt={product.fields.nome} />
 		</div>
 	</SquareDiv>
-	<p class="name">{product.name}</p>
-	<p class="price">{product.prezzo}<span class="unit">€/kg</span></p>
+	<p class="name">{product.fields.nome}</p>
+	<p class="price">{product.fields.prezzo}<span class="unit">€/kg</span></p>
 </div>
 
 <style>
