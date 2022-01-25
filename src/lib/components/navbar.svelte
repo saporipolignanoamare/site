@@ -70,9 +70,6 @@
 	.navbar {
 		width: 100%;
 		background-color: var(--accent);
-		position: sticky;
-		top: 0;
-		z-index: 99;
 		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 	}
 

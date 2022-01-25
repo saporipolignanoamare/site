@@ -34,17 +34,19 @@
 <!--  -->
 
 {#await promise}
-	<LoadingScreen />
+	<div>
+		<LoadingScreen />
+	</div>
 {:then categories}
 	<Navbar />
 	{#if $showMenu}
 		<Menu />
-	{:else}
-		<div>
-			<slot />
-		</div>
-		<Footer />
 	{/if}
+
+	<div>
+		<slot />
+		<Footer />
+	</div>
 {:catch error}
 	{JSON.parse(error.message).message}
 {/await}
@@ -53,5 +55,7 @@
 <style>
 	div {
 		background-color: white;
+		overflow-y: auto;
+		flex-grow: 1;
 	}
 </style>

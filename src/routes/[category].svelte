@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { t, locale } from '$lib/translations';
+	import { locale } from '$lib/translations';
 	import { page } from '$app/stores';
 	import { categories } from '$lib/stores';
 	import type { ICategoria } from '$lib/types';
@@ -18,8 +18,6 @@
 			category = element;
 		}
 	});
-
-	//
 
 	let promise;
 	$: {
