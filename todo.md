@@ -2,7 +2,7 @@
 
 ## Urgente
 
-- Fix menu link bug
+- []
 
 ## Aggiunte
 
@@ -13,6 +13,13 @@
 
 ## Rifinitura
 
+- Ragginare caricamento immagini
 - Sistema variabili css
 - Verifica su altri browser
 - Footer: fetch numeri telefono da cms
+
+---
+
+# Done
+
+- Fix menu link bug

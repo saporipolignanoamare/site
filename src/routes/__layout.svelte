@@ -14,8 +14,16 @@
 	import { getCategories } from '$lib/requestsUtils/queries';
 	import type { ICategoria } from '$lib/types';
 	import { showMenu, categories } from '$lib/stores';
+	import { beforeNavigate } from '$app/navigation';
 
 	import { Footer, Navbar, Menu, LoadingScreen } from '$lib/components';
+
+	//
+
+	// Serve a far chiudere il menù quando si clicca un link
+	beforeNavigate(() => {
+		$showMenu = false;
+	});
 
 	//
 
