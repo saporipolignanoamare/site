@@ -6,8 +6,6 @@
 
 ## Aggiunte
 
-- Slideshow immagini home
-- Pagina acquista
 - Pagina about
 - Meccanismo carrello
 
@@ -23,3 +21,5 @@
 # Done
 
 - Fix menu link bug
+- Slideshow immagini home
+- Pagina acquista
