@@ -8,6 +8,7 @@
 
 	import Product from '$lib/components/product.svelte';
 	import LoadingScreen from '$lib/components/loadingScreen.svelte';
+	import MainCta from '$lib/components/mainCta.svelte';
 
 	//
 
@@ -37,6 +38,7 @@
 			<Product {product} />
 		{/each}
 	</div>
+	<MainCta href="/acquista">Scopri come acquistare</MainCta>
 {:catch error}
 	{JSON.parse(error.message).message}
 {/await}
