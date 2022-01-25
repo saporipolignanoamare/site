@@ -70,7 +70,7 @@
 	.navbar {
 		width: 100%;
 		background-color: var(--accent);
-		border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+		border-bottom: var(--border);
 	}
 
 	.title-small {

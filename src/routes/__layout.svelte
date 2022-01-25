@@ -39,11 +39,12 @@
 	</div>
 {:then categories}
 	<Navbar />
-	{#if $showMenu}
-		<Menu />
-	{/if}
-
-	<div>
+	<div class:lock-scroll={$showMenu}>
+		<!--  -->
+		{#if $showMenu}
+			<Menu />
+		{/if}
+		<!--  -->
 		<slot />
 		<Footer />
 	</div>
@@ -57,5 +58,9 @@
 		background-color: white;
 		overflow-y: auto;
 		flex-grow: 1;
+	}
+
+	.lock-scroll {
+		overflow: hidden;
 	}
 </style>

@@ -4,6 +4,11 @@
 	--grid-columns: repeat(2, 1fr);
 	--spacing: 20px;
 	--card-radius: 20px;
+
+	--button-bg: rgba(0, 0, 0, 0.3);
+	--button-bg-hover: rgba(0, 0, 0, 0.6);
+
+	--border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 @media screen and (min-width: 768px) {
@@ -73,7 +78,7 @@ body,
 	height: 38px;
 	min-height: 38px;
 	max-height: 38px;
-	background-color: rgba(0, 0, 0, 0.3);
+	background-color: var(--button-bg);
 	display: flex;
 	flex-flow: row nowrap;
 	align-items: center;
@@ -83,6 +88,10 @@ body,
 }
 
 .nav-button:hover {
-	background-color: rgba(0, 0, 0, 0.6);
+	background-color: var(--button-bg-hover);
 	cursor: pointer;
+}
+
+.space-before > * + * {
+	margin-top: 10px;
 }
