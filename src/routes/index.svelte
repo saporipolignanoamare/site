@@ -3,11 +3,21 @@
 	import { categories } from '$lib/stores';
 
 	import HomeCategory from '$lib/components/homeCategory.svelte';
+	import Carousel from '$lib/components/carousel.svelte';
+
+	//
+
+	const images: Array<string> = [];
+
+	$categories.forEach((category) => {
+		images.push(category.fields.immagine.fields.file.url);
+	});
 </script>
 
 <!--  -->
 
 <div class="heading">
+	<Carousel {images} />
 	<h1>{$t('home.intro')}</h1>
 </div>
 
