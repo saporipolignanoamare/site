@@ -1,21 +1,25 @@
 <script lang="ts">
+	import { t } from '$lib/translations';
+
 	import { SyncLoader } from 'svelte-loading-spinners';
 </script>
 
+<!--  -->
+
 <div>
 	<SyncLoader color="var(--accent)" />
-	<p>Caricamento bontà</p>
+	<p>{$t('common.loading')}</p>
 </div>
 
+<!--  -->
 <style>
 	div {
-		width: 100%;
 		display: flex;
 		flex-flow: column nowrap;
 		align-items: center;
 		justify-content: center;
-		padding: 20px;
-		height: 100%;
+		padding: var(--spacing);
+		width: 100%;
 	}
 
 	p {

@@ -9,9 +9,19 @@ export const config = {
 	loaders: [
 		{
 			locale: 'it',
+			key: 'common',
+			loader: async () => (await import('./it/common.json')).default
+		},
+		{
+			locale: 'it',
 			key: 'home',
 			routes: ['/'],
 			loader: async () => (await import('./it/home.json')).default
+		},
+		{
+			locale: 'en',
+			key: 'common',
+			loader: async () => (await import('./en/common.json')).default
 		},
 		{
 			locale: 'en',
