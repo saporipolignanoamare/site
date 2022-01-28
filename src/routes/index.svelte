@@ -23,7 +23,7 @@
 	</div>
 </div>
 
-<div class="max-width">
+<div class="max-width content">
 	<h2>{$t('home.cta')}</h2>
 	<div class="categories grid">
 		{#each $categories as category}
@@ -50,6 +50,7 @@
 
 	.heading {
 		height: 70vh;
+		max-height: 700px;
 		width: 100%;
 		position: relative;
 	}
@@ -58,12 +59,14 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		width: 100%;
+		height: 100%;
+
 		display: flex;
 		flex-flow: row nowrap;
 		justify-content: center;
 		align-items: center;
-		width: 100%;
-		height: 100%;
+
 		padding: var(--spacing);
 		background-color: rgba(0, 0, 0, 0.3);
 	}

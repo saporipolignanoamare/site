@@ -4,7 +4,6 @@
 	import { categories } from '$lib/stores';
 	import type { ICategoria } from '$lib/types';
 	import { getProductsByCategory } from '$lib/requestsUtils/queries';
-	import { onMount } from 'svelte';
 
 	import Product from '$lib/components/product.svelte';
 	import LoadingScreen from '$lib/components/loadingScreen.svelte';

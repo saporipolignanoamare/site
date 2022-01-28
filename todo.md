@@ -15,6 +15,7 @@
 - Sistema variabili css
 - Verifica su altri browser
 - Footer: fetch numeri telefono da cms
+- Loading in menu (await categories)
 
 ---
 
