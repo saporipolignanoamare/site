@@ -18,7 +18,9 @@
 
 <div class="heading">
 	<Carousel {images} />
-	<h1>{$t('home.intro')}</h1>
+	<div class="intro-container">
+		<h1>{$t('home.intro')}</h1>
+	</div>
 </div>
 
 <div class="max-width">
@@ -47,11 +49,22 @@
 	}
 
 	.heading {
+		height: 70vh;
+		width: 100%;
+		position: relative;
+	}
+
+	.intro-container {
+		position: absolute;
+		top: 0;
+		left: 0;
 		display: flex;
-		flex-flow: column nowrap;
+		flex-flow: row nowrap;
 		justify-content: center;
 		align-items: center;
-		background-color: var(--accent);
-		padding: 50px;
+		width: 100%;
+		height: 100%;
+		padding: var(--spacing);
+		background-color: rgba(0, 0, 0, 0.3);
 	}
 </style>
