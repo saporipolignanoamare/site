@@ -12,7 +12,6 @@
 
 <script lang="ts">
 	import { getCategories } from '$lib/requestsUtils/queries';
-	import type { ICategoria } from '$lib/types';
 	import { showMenu, categories } from '$lib/stores';
 	import { afterNavigate } from '$app/navigation';
 
@@ -41,38 +40,27 @@
 
 <!--  -->
 
-<!-- {#await promise} -->
-<div class="loading-container">
+<Navbar />
+
+{#if $showMenu}
+	<Menu />
+{/if}
+
+{#await promise}
 	<LoadingScreen />
-</div>
-<!-- {:then categories}
-	<Navbar />
-	<div class:lock-scroll={$showMenu}>
-		{#if $showMenu}
-			<Menu />
-		{/if}
+{:then categories}
+	<div>
 		<slot />
-		<Footer />
 	</div>
+	<Footer />
 {:catch error}
 	{JSON.parse(error.message).message}
-{/await} -->
+{/await}
 
 <!--  -->
 <style>
 	div {
+		padding-bottom: var(--spacing);
 		background-color: white;
-		overflow-y: auto;
-		flex-grow: 1;
-		display: flex;
-		flex-flow: row nowrap;
-		align-items: stretch;
-	}
-
-	.loading-container {
-	}
-
-	.lock-scroll {
-		overflow: hidden;
 	}
 </style>

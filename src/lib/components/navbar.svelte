@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { t, locale } from '$lib/translations';
 	import { page } from '$app/stores';
-	import { category, showMenu } from '$lib/stores';
+	import { category, showMenu, navHeight } from '$lib/stores';
 
 	import Home24 from 'carbon-icons-svelte/lib/Home24/Home24.svelte';
 	import Menu24 from 'carbon-icons-svelte/lib/Menu24/Menu24.svelte';
@@ -15,7 +15,7 @@
 
 <!--  -->
 
-<div class="navbar">
+<div class="navbar" bind:clientHeight={$navHeight}>
 	<div class="navbar-content max-width">
 		<!-- Left side -->
 		<div class="side side-left">
@@ -71,6 +71,10 @@
 		width: 100%;
 		background-color: var(--accent);
 		border-bottom: var(--border);
+
+		position: sticky;
+		top: 0;
+		z-index: 100;
 	}
 
 	.title-small {
