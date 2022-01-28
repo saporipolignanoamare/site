@@ -1,36 +1,44 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { flip } from 'svelte/animate';
+
+	//
 
 	export let images: Array<string>;
+
+	let index = 1;
+	let showImages = [images[1], images[0]];
 
 	onMount(() => {
 		setInterval(() => {
 			index = (index + 1) % images.length;
-		}, 3000);
+			showImages = [images[index], ...showImages];
+			showImages.pop();
+		}, 6000);
 	});
-
-	let index = 0;
 </script>
 
 <div>
-	<div class="carousel-container">
-		{#each [images[index]] as src (index)}
-			<img transition:fade {src} alt="" />
-		{/each}
-	</div>
+	{#each showImages as src (src)}
+		<img animate:flip transition:fade {src} alt="" />
+	{/each}
 </div>
 
 <style>
-	.carousel-container {
-		display: block;
-		height: 50vh;
+	div {
+		position: relative;
 		width: 100%;
+		height: 100%;
+		background-color: olive;
 	}
 
 	img {
-		object-fit: fill;
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
 		height: 100%;
+		object-fit: cover;
 	}
 </style>
