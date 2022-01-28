@@ -14,14 +14,14 @@
 	import { getCategories } from '$lib/requestsUtils/queries';
 	import type { ICategoria } from '$lib/types';
 	import { showMenu, categories } from '$lib/stores';
-	import { beforeNavigate } from '$app/navigation';
+	import { afterNavigate } from '$app/navigation';
 
 	import { Footer, Navbar, Menu, LoadingScreen } from '$lib/components';
 
 	//
 
 	// Serve a far chiudere il menù quando si clicca un link
-	beforeNavigate(() => {
+	afterNavigate(() => {
 		$showMenu = false;
 	});
 
@@ -30,10 +30,10 @@
 	async function setupCategories(locale: string) {
 		const categoriesReq = await getCategories(locale);
 		$categories = categoriesReq;
-		return categoriesReq;
+		return true;
 	}
 
-	let promise: Promise<Array<ICategoria>>;
+	let promise;
 	$: {
 		promise = setupCategories($locale);
 	}
@@ -41,24 +41,22 @@
 
 <!--  -->
 
-{#await promise}
-	<div>
-		<LoadingScreen />
-	</div>
-{:then categories}
+<!-- {#await promise} -->
+<div class="loading-container">
+	<LoadingScreen />
+</div>
+<!-- {:then categories}
 	<Navbar />
 	<div class:lock-scroll={$showMenu}>
-		<!--  -->
 		{#if $showMenu}
 			<Menu />
 		{/if}
-		<!--  -->
 		<slot />
 		<Footer />
 	</div>
 {:catch error}
 	{JSON.parse(error.message).message}
-{/await}
+{/await} -->
 
 <!--  -->
 <style>
@@ -66,6 +64,12 @@
 		background-color: white;
 		overflow-y: auto;
 		flex-grow: 1;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: stretch;
+	}
+
+	.loading-container {
 	}
 
 	.lock-scroll {
