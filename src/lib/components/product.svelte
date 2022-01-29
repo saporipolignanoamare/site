@@ -9,7 +9,10 @@
 <div class="product">
 	<SquareDiv width="100%">
 		<div class="img-container">
-			<img src={product.fields.foto.fields.file.url} alt={product.fields.nome} />
+			<img
+				src="{product.fields.foto.fields.file.url}?w=400&h=400&fm=jpg&fl=progressive"
+				alt={product.fields.nome}
+			/>
 		</div>
 	</SquareDiv>
 	<p class="name">{product.fields.nome}</p>
