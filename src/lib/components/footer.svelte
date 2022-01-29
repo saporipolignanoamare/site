@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { numbers } from '$lib/stores';
 	import { rws } from '$lib/utils';
+	import { t } from '$lib/translations';
 
 	const obj = $numbers.fields.numeri;
 	const keys = Object.keys(obj);
@@ -13,7 +14,7 @@
 		<h2>Sapori</h2>
 		<p>Polignano a Mare (BA) - IT</p>
 		<hr />
-		<p>Contatti:</p>
+		<p>{$t('common.contacts')}:</p>
 		<ul>
 			{#each keys as key}
 				<li>{key}: <a rel="external" href="https://wa.me/{rws(obj[key])}">{obj[key]}</a></li>

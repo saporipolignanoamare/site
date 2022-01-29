@@ -4,6 +4,7 @@
 	import { categories } from '$lib/stores';
 	import type { ICategoria } from '$lib/types';
 	import { getProductsByCategory } from '$lib/requestsUtils/queries';
+	import { t } from '$lib/translations';
 
 	import Product from '$lib/components/product.svelte';
 	import LoadingScreen from '$lib/components/loadingScreen.svelte';
@@ -37,7 +38,7 @@
 			<Product {product} />
 		{/each}
 	</div>
-	<MainCta href="/acquista">Scopri come acquistare</MainCta>
+	<MainCta href="/acquista">{$t('common.how')}</MainCta>
 {:catch error}
 	{JSON.parse(error.message).message}
 {/await}

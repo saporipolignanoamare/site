@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { categories } from '$lib/stores';
+	import { t } from '$lib/translations';
 	import { MenuLink, FillingDiv } from '$lib/components';
 	import Home24 from 'carbon-icons-svelte/lib/Home24/Home24.svelte';
 	import ShoppingCart24 from 'carbon-icons-svelte/lib/ShoppingCart24/ShoppingCart24.svelte';
@@ -10,7 +11,7 @@
 		<div class="menu-content max-width">
 			<div class="space-before">
 				<MenuLink href="/" icon={Home24}>Home</MenuLink>
-				<MenuLink href="/acquista" icon={ShoppingCart24}>Acquista</MenuLink>
+				<MenuLink href="/acquista" icon={ShoppingCart24}>{$t('common.buy')}</MenuLink>
 			</div>
 			<hr />
 			<div class="space-before">

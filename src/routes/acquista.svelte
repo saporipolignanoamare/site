@@ -4,7 +4,7 @@
 	import type { IAcquista } from '$lib/types';
 
 	import { getAcquistaText } from '$lib/requestsUtils/queries';
-	import { locale } from '$lib/translations';
+	import { locale, t } from '$lib/translations';
 
 	import { LoadingScreen } from '$lib/components';
 	import { numbers } from '$lib/stores';
@@ -28,7 +28,7 @@
 {:then text}
 	<div class="max-width">
 		{@html documentToHtmlString(text.fields.testo)}
-		<MainCta rel="external" href="https://wa.me/{rws(telVito)}">Inviaci un messaggio!</MainCta>
+		<MainCta rel="external" href="https://wa.me/{rws(telVito)}">{$t('common.textUs')}</MainCta>
 	</div>
 {/await}
 
