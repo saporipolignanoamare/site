@@ -11,8 +11,8 @@
 </script>
 
 <script lang="ts">
-	import { getCategories } from '$lib/requestsUtils/queries';
-	import { showMenu, categories } from '$lib/stores';
+	import { getCategories, getPhoneNumbers } from '$lib/requestsUtils/queries';
+	import { showMenu, categories, numbers } from '$lib/stores';
 	import { afterNavigate } from '$app/navigation';
 
 	import { Footer, Navbar, Menu, LoadingScreen } from '$lib/components';
@@ -26,15 +26,20 @@
 
 	//
 
-	async function setupCategories(locale: string) {
+	async function setup(locale: string) {
+		//
 		const categoriesReq = await getCategories(locale);
 		$categories = categoriesReq;
+		//
+		const numbersReq = await getPhoneNumbers();
+		$numbers = numbersReq;
+		//
 		return true;
 	}
 
 	let promise;
 	$: {
-		promise = setupCategories($locale);
+		promise = setup($locale);
 	}
 </script>
 
@@ -48,7 +53,7 @@
 
 {#await promise}
 	<LoadingScreen />
-{:then categories}
+{:then response}
 	<div>
 		<slot />
 	</div>

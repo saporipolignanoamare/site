@@ -1,11 +1,9 @@
 <script lang="ts">
-	const telVito: string = '+39 373 511 6489';
-	const telAndrea: string = '+39 347 371 4781';
+	import { numbers } from '$lib/stores';
+	import { rws } from '$lib/utils';
 
-	// Removes whitespace
-	function rws(s: string): string {
-		return s.replace(/\s/g, '');
-	}
+	const obj = $numbers.fields.numeri;
+	const keys = Object.keys(obj);
 </script>
 
 <!--  -->
@@ -17,8 +15,9 @@
 		<hr />
 		<p>Contatti:</p>
 		<ul>
-			<li>Vito: <a rel="external" href="https://wa.me/{rws(telVito)}">{telVito}</a></li>
-			<li>Andrea: <a rel="external" href="https://wa.me/{rws(telAndrea)}">{telAndrea}</a></li>
+			{#each keys as key}
+				<li>{key}: <a rel="external" href="https://wa.me/{rws(obj[key])}">{obj[key]}</a></li>
+			{/each}
 		</ul>
 	</div>
 </div>

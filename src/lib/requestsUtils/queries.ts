@@ -1,5 +1,5 @@
 import { client } from '$lib/requestsUtils/client';
-import type { ICategoria, IProdotto } from '$lib/types';
+import type { ICategoria, IProdotto, IAcquista, ITelefono } from '$lib/types';
 
 //
 
@@ -35,4 +35,20 @@ export async function getProductsByCategory(
 	});
 	// Casting type
 	return data.items as Array<IProdotto>;
+}
+
+//
+
+export async function getAcquistaText(locale: string): Promise<IAcquista> {
+	// Requesting categories
+	const data = await client.getEntry('3HQI9CHzu9Ewqh7ZtaXKmv', { locale });
+	// Casting type
+	return data as IAcquista;
+}
+
+//
+
+export async function getPhoneNumbers(): Promise<ITelefono> {
+	const data = await client.getEntry('1Y6Guv4ycKqCCNlqMMW3rE');
+	return data as ITelefono;
 }
