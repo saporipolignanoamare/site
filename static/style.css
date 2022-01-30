@@ -101,6 +101,10 @@ a {
 	box-shadow: var(--shadow);
 }
 
+.noscroll {
+	overflow: hidden;
+}
+
 /*  */
 
 .btn {
