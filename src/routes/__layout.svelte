@@ -12,9 +12,8 @@
 
 <script lang="ts">
 	import { getCategories, getPhoneNumbers } from '$lib/requestsUtils/queries';
-	import { showMenu, categories, numbers, el } from '$lib/stores';
+	import { showMenu, categories, numbers } from '$lib/stores';
 	import { afterNavigate } from '$app/navigation';
-	import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 	import { Footer, Navbar, Menu, LoadingScreen } from '$lib/components';
 
@@ -41,12 +40,6 @@
 	let promise;
 	$: {
 		promise = setup($locale);
-	}
-
-	$: if ($showMenu && $el) {
-		disableBodyScroll($el);
-	} else {
-		enableBodyScroll($el);
 	}
 </script>
 
