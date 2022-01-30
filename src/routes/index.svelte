@@ -2,15 +2,14 @@
 	import { t } from '$lib/translations';
 	import { categories } from '$lib/stores';
 
-	import HomeCategory from '$lib/components/homeCategory.svelte';
-	import Carousel from '$lib/components/carousel.svelte';
+	import { Carousel, HomeCategory } from '$lib/components';
 
 	//
 
 	const images: Array<string> = [];
 
 	$categories.forEach((category) => {
-		images.push(category.fields.immagine.fields.file.url);
+		images.push(category.fields.immagine.fields.file.url + '?h=700&fm=jpg&fl=progressive');
 	});
 </script>
 
@@ -45,6 +44,7 @@
 		font-weight: 400;
 		text-align: center;
 		margin-top: var(--spacing);
+		padding: 0 var(--spacing);
 	}
 
 	.heading {
@@ -72,5 +72,9 @@
 
 	.categories {
 		margin: 0 auto;
+	}
+
+	.content {
+		padding: var(--spacing) 0;
 	}
 </style>

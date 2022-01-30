@@ -6,9 +6,7 @@
 	import { getProductsByCategory } from '$lib/requestsUtils/queries';
 	import { t } from '$lib/translations';
 
-	import Product from '$lib/components/product.svelte';
-	import LoadingScreen from '$lib/components/loadingScreen.svelte';
-	import MainCta from '$lib/components/mainCta.svelte';
+	import { Product, LoadingScreen, MainCta } from '$lib/components';
 
 	import { Help24 } from '$lib/icons';
 

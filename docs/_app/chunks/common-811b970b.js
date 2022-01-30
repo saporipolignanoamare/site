@@ -1,0 +1,1 @@
+const o="Loading goodies",t="Buy",s="Contacts",c="How to purchase",n="Text us!";var a={loading:o,buy:t,contacts:s,how:c,textUs:n};export{t as buy,s as contacts,a as default,c as how,o as loading,n as textUs};

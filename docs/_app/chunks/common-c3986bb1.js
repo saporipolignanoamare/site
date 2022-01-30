@@ -1,0 +1,1 @@
+const t="Caricamento bont\xE0",o="Acquista",a="Contatti",n="Come acquistare",c="Inviaci un messaggio!";var s={loading:t,buy:o,contacts:a,how:n,textUs:c};export{o as buy,a as contacts,s as default,n as how,t as loading,c as textUs};

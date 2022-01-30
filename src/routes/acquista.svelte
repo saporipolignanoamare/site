@@ -1,16 +1,13 @@
 <script lang="ts">
-	import MainCta from '$lib/components/mainCta.svelte';
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+	import { getAcquistaText } from '$lib/requestsUtils/queries';
 	import type { IAcquista } from '$lib/types';
 
-	import { getAcquistaText } from '$lib/requestsUtils/queries';
 	import { locale, t } from '$lib/translations';
-
-	import { LoadingScreen } from '$lib/components';
+	import { rws } from '$lib/utils';
 	import { numbers } from '$lib/stores';
 
-	import { rws } from '$lib/utils';
-
+	import { LoadingScreen, MainCta } from '$lib/components';
 	import { Phone24 } from '$lib/icons';
 
 	//

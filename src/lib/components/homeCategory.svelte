@@ -10,23 +10,22 @@
 
 	//
 
+	const src = category.fields.immagine.fields.file.url + '?w=300&h=300';
+	const alt = category.fields.nomeCategoria;
+
 	let size: number;
 </script>
 
 <SquareDiv side="100%">
-	<a
-		bind:clientWidth={size}
-		href="/{category.fields.slug}"
-		style="--bg: url({category.fields.immagine.fields.file
-			.url}?w=300&h=300&fm=jpg&fl=progressive); --size: {size}px"
-	>
-		<!--  -->
-		<p class="category">
-			{category.fields.nomeCategoria}
-		</p>
-		<!--  -->
-		<div class="arrow shadow btn btn-base-l">
-			<svelte:component this={ArrowRight24} style="fill: var(--c-content-0-l)" />
+	<a bind:clientWidth={size} href="/{category.fields.slug}" style="--size: {size}px">
+		<img {src} {alt} />
+		<div class="overlay">
+			<p class="category">
+				{category.fields.nomeCategoria}
+			</p>
+			<div class="arrow shadow btn btn-base-l">
+				<svelte:component this={ArrowRight24} style="fill: var(--c-content-0-l)" />
+			</div>
 		</div>
 	</a>
 </SquareDiv>
@@ -35,24 +34,15 @@
 	/* Container */
 
 	a {
+		display: block;
+		position: relative;
 		width: 100%;
 		height: 100%;
-
-		display: flex;
-		flex-flow: column nowrap;
-
-		justify-content: space-between;
-
-		padding: calc(var(--size) / 10);
 		border-radius: calc(var(--size) / 10);
-
-		background: linear-gradient(rgba(50, 50, 0, 0.4), rgba(50, 50, 0, 0.4)), var(--bg), var(--bg);
-		background-size: cover;
-		background-position: center;
-
+		overflow: hidden;
 		text-decoration: none;
-
 		transition: transform 0.2s, box-shadow 0.2s;
+		background-color: var(--c-bg-footer);
 	}
 
 	a:hover {
@@ -60,12 +50,33 @@
 		box-shadow: var(--shadow);
 	}
 
-	/* a:hover > .arrow {
+	a:hover .arrow {
 		--c-content-0-l: var(--c-content-0-d);
 		background-color: var(--c-accent-hover);
-	} */
+	}
 
 	/* Content */
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.overlay {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		padding: calc(var(--size) / 10);
+
+		background-color: rgba(0, 0, 0, 0.2);
+
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: space-between;
+	}
 
 	p {
 		color: var(--c-content-0-l);
