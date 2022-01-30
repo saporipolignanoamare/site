@@ -12,9 +12,9 @@
 
 <script lang="ts">
 	import { getCategories, getPhoneNumbers } from '$lib/requestsUtils/queries';
-	import { showMenu, categories, numbers, el } from '$lib/stores';
+	import { showMenu, categories, numbers } from '$lib/stores';
 	import { afterNavigate } from '$app/navigation';
-	import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+	import { browser } from '$app/env';
 
 	import { Footer, Navbar, Menu, LoadingScreen } from '$lib/components';
 
@@ -43,10 +43,24 @@
 		promise = setup($locale);
 	}
 
-	$: if ($showMenu && $el) {
-		disableBodyScroll($el);
-	} else {
-		enableBodyScroll($el);
+	// Locks the scroll
+	let body;
+	let scrollPosition;
+	$: if (browser) {
+		body = document.body;
+		if ($showMenu) {
+			scrollPosition = window.pageYOffset;
+			body.style.overflow = 'hidden';
+			body.style.position = 'fixed';
+			body.style.top = `-${scrollPosition}px`;
+			body.style.width = '100%';
+		} else {
+			body.style.removeProperty('overflow');
+			body.style.removeProperty('position');
+			body.style.removeProperty('top');
+			body.style.removeProperty('width');
+			window.scrollTo(0, scrollPosition);
+		}
 	}
 </script>
 
