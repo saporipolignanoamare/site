@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { categories } from '$lib/stores';
+	import { categories, el } from '$lib/stores';
 	import { t } from '$lib/translations';
 	import { MenuLink, FillingDiv } from '$lib/components';
 	import { Home24, ShoppingCart24 } from '$lib/icons';
 </script>
 
 <FillingDiv zIndex={99}>
-	<div class="menu">
+	<div bind:this={$el} class="menu">
 		<div class="max-width">
 			<div class="col">
 				<div class="space-before">
