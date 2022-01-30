@@ -27,13 +27,11 @@
 </a>
 
 <style>
-	a {
+	a,
+	a:visited {
 		justify-content: flex-start;
 		text-decoration: none;
 		font-size: var(--f-size-base);
-	}
-
-	a:visited {
 		color: var(--c-content-0-l);
 	}
 
