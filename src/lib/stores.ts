@@ -9,8 +9,6 @@ export const navHeight = writable<number | null>(null);
 
 export const numbers = writable<ITelefono | null>(null);
 
-export const el = writable<HTMLElement | null>(null);
-
 export const categories = writable<Array<ICategoria>>([]);
 
 export function getCategoryBySlug(categories: Array<ICategoria>, slug: string) {
