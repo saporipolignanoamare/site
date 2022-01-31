@@ -16,13 +16,7 @@ const config = {
 		}),
 
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte',
-
-		prerender: {
-			crawl: true,
-			enabled: true,
-			onError: 'fail'
-		}
+		target: '#svelte'
 	}
 };
 
