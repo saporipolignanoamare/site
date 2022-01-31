@@ -22,4 +22,5 @@
 	)}</pre>
 {#if browser}
 	{param}
+	{param in $categories.map((c) => c.fields.slug)}
 {/if}
