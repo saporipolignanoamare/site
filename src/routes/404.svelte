@@ -2,4 +2,4 @@
 	import { page } from '$app/stores';
 </script>
 
-{$page.url}
+<pre>{JSON.stringify($page.params, null, 2)}</pre>
