@@ -8,7 +8,7 @@
 	if (browser) {
 		let chunks = window.location.href.split('/');
 		param = chunks[chunks.length - 1];
-		if (param in $categories.map((c) => c.fields.slug)) {
+		if ($categories.map((c) => c.fields.slug).includes(param)) {
 			goto('/' + param);
 		}
 	}
