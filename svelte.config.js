@@ -11,12 +11,18 @@ const config = {
 		adapter: adapter({
 			pages: 'docs',
 			assets: 'docs',
-			fallback: 'index.html',
+			fallback: null,
 			precompress: false
 		}),
 
 		// hydrate the <div id="svelte"> element in src/app.html
-		target: '#svelte'
+		target: '#svelte',
+
+		prerender: {
+			crawl: true,
+			enabled: true,
+			onError: 'fail'
+		}
 	}
 };
 
