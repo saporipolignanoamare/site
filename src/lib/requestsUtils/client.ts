@@ -1,13 +1,13 @@
 /**
  * BUILD IMPORT
  */
-// import pkg from 'contentful';
-// const { createClient } = pkg;
+import pkg from 'contentful';
+const { createClient } = pkg;
 
 /**
  * DEV IMPORT
  */
-import { createClient } from 'contentful';
+// import { createClient } from 'contentful';
 
 //
 

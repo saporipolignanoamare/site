@@ -7,7 +7,7 @@
 
 <!--  -->
 
-<FillingDiv zIndex={98}>
+<FillingDiv zIndex={99}>
 	<div>
 		<SyncLoader color="var(--c-main)" />
 		<p>{$t('common.loading')}</p>

@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
-	import { categories } from '$lib/stores';
+	import { categories, showLoading } from '$lib/stores';
 	import { t } from '$lib/translations';
 	import { Cta } from '$lib/components';
 	import { Undo24 } from '$lib/icons';
+
+	$showLoading = true;
 
 	let param;
 	if (browser) {
@@ -13,14 +15,18 @@
 		if ($categories.map((c) => c.fields.slug).includes(param)) {
 			goto('/' + param);
 		}
+	} else {
+		$showLoading = false;
 	}
 </script>
 
 <!--  -->
 
 <div class="text-frame">
-	<h1>404 – {$t('common.404')} :(</h1>
-	<Cta href="/" icon={Undo24}>{$t('common.back')}</Cta>
+	{#if !$showLoading}
+		<h1>404 – {$t('common.404')} :(</h1>
+		<Cta href="/" icon={Undo24}>{$t('common.back')}</Cta>
+	{/if}
 </div>
 
 <!--  -->

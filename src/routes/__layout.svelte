@@ -12,8 +12,8 @@
 
 <script lang="ts">
 	import { getCategories, getPhoneNumbers } from '$lib/requestsUtils/queries';
-	import { showMenu, categories, numbers } from '$lib/stores';
-	import { afterNavigate } from '$app/navigation';
+	import { showMenu, categories, numbers, showLoading } from '$lib/stores';
+	import { beforeNavigate, afterNavigate } from '$app/navigation';
 	import { browser } from '$app/env';
 
 	import { Footer, Navbar, Menu, LoadingScreen } from '$lib/components';
@@ -21,8 +21,14 @@
 	//
 
 	// Serve a far chiudere il menù quando si clicca un link
-	afterNavigate(() => {
+	// E a mostrare il loading
+	beforeNavigate(() => {
 		$showMenu = false;
+		$showLoading = true;
+	});
+
+	afterNavigate(() => {
+		$showLoading = false;
 	});
 
 	//
@@ -70,6 +76,10 @@
 
 {#if $showMenu}
 	<Menu />
+{/if}
+
+{#if $showLoading}
+	<LoadingScreen />
 {/if}
 
 {#await promise}
