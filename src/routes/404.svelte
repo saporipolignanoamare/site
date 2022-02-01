@@ -14,9 +14,9 @@
 		param = chunks[chunks.length - 1];
 		if ($categories.map((c) => c.fields.slug).includes(param)) {
 			goto('/' + param);
+		} else {
+			$showLoading = false;
 		}
-	} else {
-		$showLoading = false;
 	}
 </script>
 
