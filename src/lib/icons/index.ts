@@ -7,6 +7,7 @@ import Menu24 from './Menu24.svelte';
 import Phone24 from './Phone24.svelte';
 import ShoppingCart24 from './ShoppingCart24.svelte';
 import Subtract24 from './Subtract24.svelte';
+import Undo24 from './Undo24.svelte';
 
 export {
 	Add24,
@@ -17,5 +18,6 @@ export {
 	Menu24,
 	Phone24,
 	ShoppingCart24,
-	Subtract24
+	Subtract24,
+	Undo24
 };
