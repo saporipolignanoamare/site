@@ -6,7 +6,7 @@
 	import { getProductsByCategory } from '$lib/requestsUtils/queries';
 	import { t } from '$lib/translations';
 
-	import { Product, LoadingScreen, MainCta } from '$lib/components';
+	import { Product, LoadingScreen, Cta, StickyBottom } from '$lib/components';
 
 	import { Help24 } from '$lib/icons';
 
@@ -38,7 +38,9 @@
 			<Product {product} />
 		{/each}
 	</div>
-	<MainCta href="/acquista" icon={Help24}>{$t('common.how')}</MainCta>
+	<StickyBottom>
+		<Cta href="/acquista" icon={Help24}>{$t('common.how')}</Cta>
+	</StickyBottom>
 {:catch error}
 	{JSON.parse(error.message).message}
 {/await}
