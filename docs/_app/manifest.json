@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-1deef23d.js",
+    "file": "start-58412ea0.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -18,14 +18,14 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-ae6d8013.js",
+    "file": "pages/__layout.svelte-d9def4b6.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-acdcde49.js",
       "_stickyBottom.svelte_svelte_type_style_lang-45369a70.js",
-      "_loadingScreen-6a1c404c.js",
+      "_loadingScreen-5fb1d622.js",
       "_navigation-2df0726c.js",
       "_utils-75357403.js",
       "_stores-8c79090f.js",
@@ -61,13 +61,13 @@
     ]
   },
   "src/routes/acquista.svelte": {
-    "file": "pages/acquista.svelte-32f0a27e.js",
+    "file": "pages/acquista.svelte-e3a4a2c3.js",
     "src": "src/routes/acquista.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-acdcde49.js",
-      "_loadingScreen-6a1c404c.js",
+      "_loadingScreen-5fb1d622.js",
       "_stickyBottom.svelte_svelte_type_style_lang-45369a70.js",
       "_utils-75357403.js",
       "_cta-55883383.js",
@@ -93,7 +93,7 @@
     ]
   },
   "src/routes/[category].svelte": {
-    "file": "pages/_category_.svelte-363e886f.js",
+    "file": "pages/_category_.svelte-406ee27c.js",
     "src": "src/routes/[category].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
@@ -101,7 +101,7 @@
       "_vendor-acdcde49.js",
       "_stickyBottom.svelte_svelte_type_style_lang-45369a70.js",
       "_stores-8c79090f.js",
-      "_loadingScreen-6a1c404c.js",
+      "_loadingScreen-5fb1d622.js",
       "_cta-55883383.js",
       "_squareDiv-223eb2e1.js",
       "_stickyBottom-e3f63a53.js",
@@ -133,11 +133,11 @@
       "src/lib/translations/en/home.json"
     ],
     "css": [
-      "assets/stickyBottom.svelte_svelte_type_style_lang-8a8d9536.css"
+      "assets/stickyBottom.svelte_svelte_type_style_lang-0f7d5340.css"
     ]
   },
-  "_loadingScreen-6a1c404c.js": {
-    "file": "chunks/loadingScreen-6a1c404c.js",
+  "_loadingScreen-5fb1d622.js": {
+    "file": "chunks/loadingScreen-5fb1d622.js",
     "imports": [
       "_vendor-acdcde49.js",
       "_stickyBottom.svelte_svelte_type_style_lang-45369a70.js"

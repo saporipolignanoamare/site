@@ -52,10 +52,8 @@
 		<!-- Right side -->
 		<div class="side side-right">
 			<!-- Language button -->
-			<button class="btn btn-base-d" on:click={changeLocale}>
-				<p class="flag">
-					{$t(`lang.${otherLocale}`)}
-				</p>
+			<button class="btn-flag btn-base-d" on:click={changeLocale}>
+				<div class="flag flag-{otherLocale}" />
 			</button>
 			<!-- menu button here -->
 			<button class="btn btn-base-d" on:click={toggleMenu}>
@@ -133,15 +131,22 @@
 
 	/* Buttons */
 
-	.flag {
-		width: 24px;
-		height: 24px;
-		font-size: 26px;
-		text-align: center;
-		line-height: 110%;
-	}
-
 	.home {
 		margin-right: calc(var(--spacing) / 2);
+	}
+
+	.btn-flag {
+		border: none;
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+		width: 44px;
+		height: 44px;
+		border-radius: var(--r-btn);
+	}
+
+	.btn-flag:hover {
+		cursor: pointer;
 	}
 </style>

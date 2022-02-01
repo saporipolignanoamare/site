@@ -34,7 +34,6 @@
 	//
 
 	async function setup(locale: string) {
-		//
 		const categoriesReq = await getCategories(locale);
 		$categories = categoriesReq;
 		//
@@ -89,8 +88,6 @@
 		<slot />
 	</div>
 	<Footer />
-{:catch error}
-	{JSON.parse(error.message).message}
 {/await}
 
 <!--  -->

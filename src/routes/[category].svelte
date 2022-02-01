@@ -25,8 +25,10 @@
 				category = element;
 			}
 		});
-		// Getting products
-		promise = getProductsByCategory(category, $locale);
+		if (category) {
+			// Getting products
+			promise = getProductsByCategory(category, $locale);
+		}
 	}
 </script>
 
@@ -41,8 +43,6 @@
 	<StickyBottom>
 		<Cta href="/acquista" icon={Help24}>{$t('common.how')}</Cta>
 	</StickyBottom>
-{:catch error}
-	{JSON.parse(error.message).message}
 {/await}
 
 <!--  -->

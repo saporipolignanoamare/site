@@ -5,7 +5,7 @@
 	import { Home24, ShoppingCart24 } from '$lib/icons';
 </script>
 
-<FillingDiv zIndex={98}>
+<FillingDiv zIndex={99}>
 	<div class="menu">
 		<div class="max-width">
 			<div class="col">

@@ -187,3 +187,18 @@ a {
 .steps li p {
 	margin-top: calc(var(--spacing) / 2);
 }
+
+.flag {
+	width: 28px;
+	height: 28px;
+	background-position: center;
+	background-size: cover;
+}
+
+.flag-it {
+	background-image: url('./images/flag-it.png');
+}
+
+.flag-en {
+	background-image: url('./images/flag-en.png');
+}
