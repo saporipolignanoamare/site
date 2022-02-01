@@ -1,0 +1,1 @@
+const t="Caricamento bont\xE0",a="Acquista",o="Contatti",n="Come acquistare",c="Inviaci un messaggio!",s="Torna alla home";var i={"404":"Pagina non trovata",loading:t,buy:a,contacts:o,how:n,textUs:c,back:s};export{s as back,a as buy,o as contacts,i as default,n as how,t as loading,c as textUs};

@@ -85,6 +85,12 @@ a {
 	margin: 0 auto;
 }
 
+.text-frame {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: calc(var(--spacing) * 2) var(--spacing);
+}
+
 .space-before > * + * {
 	margin-top: calc(var(--spacing) / 2);
 }

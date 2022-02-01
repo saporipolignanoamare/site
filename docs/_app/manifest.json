@@ -1,6 +1,6 @@
 {
   ".svelte-kit/runtime/client/start.js": {
-    "file": "start-cb9eecef.js",
+    "file": "start-424ab68e.js",
     "src": ".svelte-kit/runtime/client/start.js",
     "isEntry": true,
     "imports": [
@@ -18,15 +18,14 @@
     ]
   },
   "src/routes/__layout.svelte": {
-    "file": "pages/__layout.svelte-bed63a04.js",
+    "file": "pages/__layout.svelte-d5f47009.js",
     "src": "src/routes/__layout.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-acdcde49.js",
-      "_product.svelte_svelte_type_style_lang-1aa0bd15.js",
-      "_loadingScreen-91e3644c.js",
-      "_stores-8df143b6.js",
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js",
+      "_loadingScreen-4cff2142.js",
       "_navigation-c0b2019f.js",
       "_utils-75357403.js",
       "_stores-8c79090f.js",
@@ -47,15 +46,14 @@
     ]
   },
   "src/routes/index.svelte": {
-    "file": "pages/index.svelte-29cc2ec9.js",
+    "file": "pages/index.svelte-9cec5f90.js",
     "src": "src/routes/index.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-acdcde49.js",
-      "_product.svelte_svelte_type_style_lang-1aa0bd15.js",
-      "_stores-8df143b6.js",
-      "_squareDiv-a024eb0f.js",
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js",
+      "_squareDiv-81a37dec.js",
       "_preload-helper-ec9aa979.js"
     ],
     "css": [
@@ -63,49 +61,50 @@
     ]
   },
   "src/routes/acquista.svelte": {
-    "file": "pages/acquista.svelte-4851fccc.js",
+    "file": "pages/acquista.svelte-72c2ef75.js",
     "src": "src/routes/acquista.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-acdcde49.js",
-      "_loadingScreen-91e3644c.js",
-      "_product.svelte_svelte_type_style_lang-1aa0bd15.js",
+      "_loadingScreen-4cff2142.js",
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js",
       "_utils-75357403.js",
-      "_stores-8df143b6.js",
-      "_mainCta-691633c1.js",
+      "_cta-bceda21a.js",
+      "_stickyBottom-eb14dc07.js",
       "_preload-helper-ec9aa979.js"
-    ],
-    "css": [
-      "assets/pages/acquista.svelte-133a39bc.css"
     ]
   },
   "src/routes/404.svelte": {
-    "file": "pages/404.svelte-af3cb2ce.js",
+    "file": "pages/404.svelte-543c4d48.js",
     "src": "src/routes/404.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-acdcde49.js",
-      "_stores-8c79090f.js",
       "_navigation-c0b2019f.js",
-      "_stores-8df143b6.js",
-      "_singletons-a6a7384f.js"
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js",
+      "_cta-bceda21a.js",
+      "_singletons-a6a7384f.js",
+      "_preload-helper-ec9aa979.js"
+    ],
+    "css": [
+      "assets/pages/404.svelte-7aafd7b9.css"
     ]
   },
   "src/routes/[category].svelte": {
-    "file": "pages/_category_.svelte-4e005ad4.js",
+    "file": "pages/_category_.svelte-b718b67d.js",
     "src": "src/routes/[category].svelte",
     "isEntry": true,
     "isDynamicEntry": true,
     "imports": [
       "_vendor-acdcde49.js",
-      "_product.svelte_svelte_type_style_lang-1aa0bd15.js",
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js",
       "_stores-8c79090f.js",
-      "_stores-8df143b6.js",
-      "_loadingScreen-91e3644c.js",
-      "_mainCta-691633c1.js",
-      "_squareDiv-a024eb0f.js",
+      "_loadingScreen-4cff2142.js",
+      "_cta-bceda21a.js",
+      "_squareDiv-81a37dec.js",
+      "_stickyBottom-eb14dc07.js",
       "_preload-helper-ec9aa979.js"
     ],
     "css": [
@@ -121,8 +120,8 @@
   "_preload-helper-ec9aa979.js": {
     "file": "chunks/preload-helper-ec9aa979.js"
   },
-  "_product.svelte_svelte_type_style_lang-1aa0bd15.js": {
-    "file": "chunks/product.svelte_svelte_type_style_lang-1aa0bd15.js",
+  "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js": {
+    "file": "chunks/stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js",
     "imports": [
       "_preload-helper-ec9aa979.js",
       "_vendor-acdcde49.js"
@@ -134,21 +133,14 @@
       "src/lib/translations/en/home.json"
     ],
     "css": [
-      "assets/product.svelte_svelte_type_style_lang-3ca9cebe.css"
+      "assets/stickyBottom.svelte_svelte_type_style_lang-8a8d9536.css"
     ]
   },
-  "_loadingScreen-91e3644c.js": {
-    "file": "chunks/loadingScreen-91e3644c.js",
+  "_loadingScreen-4cff2142.js": {
+    "file": "chunks/loadingScreen-4cff2142.js",
     "imports": [
       "_vendor-acdcde49.js",
-      "_product.svelte_svelte_type_style_lang-1aa0bd15.js",
-      "_stores-8df143b6.js"
-    ]
-  },
-  "_stores-8df143b6.js": {
-    "file": "chunks/stores-8df143b6.js",
-    "imports": [
-      "_vendor-acdcde49.js"
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js"
     ]
   },
   "_navigation-c0b2019f.js": {
@@ -166,22 +158,29 @@
       "_vendor-acdcde49.js"
     ]
   },
-  "_squareDiv-a024eb0f.js": {
-    "file": "chunks/squareDiv-a024eb0f.js",
+  "_squareDiv-81a37dec.js": {
+    "file": "chunks/squareDiv-81a37dec.js",
     "imports": [
       "_vendor-acdcde49.js",
-      "_product.svelte_svelte_type_style_lang-1aa0bd15.js"
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js"
     ]
   },
-  "_mainCta-691633c1.js": {
-    "file": "chunks/mainCta-691633c1.js",
+  "_cta-bceda21a.js": {
+    "file": "chunks/cta-bceda21a.js",
     "imports": [
       "_vendor-acdcde49.js",
-      "_product.svelte_svelte_type_style_lang-1aa0bd15.js"
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js"
+    ]
+  },
+  "_stickyBottom-eb14dc07.js": {
+    "file": "chunks/stickyBottom-eb14dc07.js",
+    "imports": [
+      "_vendor-acdcde49.js",
+      "_stickyBottom.svelte_svelte_type_style_lang-faa2fa2c.js"
     ]
   },
   "src/lib/translations/it/common.json": {
-    "file": "chunks/common-c3986bb1.js",
+    "file": "chunks/common-95a9cfe0.js",
     "src": "src/lib/translations/it/common.json",
     "isDynamicEntry": true
   },
@@ -191,7 +190,7 @@
     "isDynamicEntry": true
   },
   "src/lib/translations/en/common.json": {
-    "file": "chunks/common-811b970b.js",
+    "file": "chunks/common-c6c0853c.js",
     "src": "src/lib/translations/en/common.json",
     "isDynamicEntry": true
   },

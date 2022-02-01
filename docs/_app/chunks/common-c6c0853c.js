@@ -1,0 +1,1 @@
+const o="Loading goodies",t="Buy",c="Contacts",a="How to purchase",n="Text us!",s="Go back to home page";var e={"404":"Page not found",loading:o,buy:t,contacts:c,how:a,textUs:n,back:s};export{s as back,t as buy,c as contacts,e as default,a as how,o as loading,n as textUs};
