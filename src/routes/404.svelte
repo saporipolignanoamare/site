@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
 	import { categories } from '$lib/stores';
+	import { t } from '$lib/translations';
+	import { Cta } from '$lib/components';
+	import { Undo24 } from '$lib/icons';
 
 	let param;
 	if (browser) {
@@ -14,13 +16,25 @@
 	}
 </script>
 
-<pre>{JSON.stringify($page.params, null, 2)}</pre>
-<pre>{JSON.stringify(
-		$categories.map((c) => c.fields.slug),
-		null,
-		2
-	)}</pre>
-{#if browser}
-	{param}
-	{param in $categories.map((c) => c.fields.slug)}
-{/if}
+<!--  -->
+
+<div class="text-frame">
+	<h1>404 – {$t('common.404')} :(</h1>
+	<Cta href="/" icon={Undo24}>{$t('common.back')}</Cta>
+</div>
+
+<!--  -->
+<style>
+	div {
+		height: 60vh;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+	}
+
+	h1 {
+		color: var(--c-main);
+		margin-bottom: var(--spacing);
+	}
+</style>
