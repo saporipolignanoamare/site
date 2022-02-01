@@ -10,13 +10,15 @@
 	<SquareDiv side="100%">
 		<div class="img-container">
 			<img
-				src="{product.fields.foto.fields.file.url}?w=300&h=300&fm=jpg&fl=progressive"
-				alt={product.fields.nome}
+				src="{product?.fields?.foto?.fields?.file?.url}?w=300&h=300&fm=jpg&fl=progressive"
+				alt={product?.fields?.nome}
 			/>
 		</div>
 	</SquareDiv>
-	<p class="name">{product.fields.nome}</p>
-	<p class="price">{product.fields.prezzo}<span class="unit">€/kg</span></p>
+	<p class="name">
+		{product?.fields?.nome}
+	</p>
+	<p class="price">{product?.fields?.prezzo}<span class="unit">€/kg</span></p>
 </div>
 
 <style>
@@ -32,6 +34,9 @@
 		object-fit: cover;
 		width: 100%;
 		height: 100%;
+
+		color: var(--c-content-footer);
+		text-align: center;
 	}
 
 	.name {
