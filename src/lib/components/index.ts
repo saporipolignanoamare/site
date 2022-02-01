@@ -3,12 +3,13 @@ import FillingDiv from './fillingDiv.svelte';
 import Footer from './footer.svelte';
 import HomeCategory from './homeCategory.svelte';
 import LoadingScreen from './loadingScreen.svelte';
-import MainCta from './mainCta.svelte';
+import Cta from './cta.svelte';
 import Menu from './menu.svelte';
 import MenuLink from './menuLink.svelte';
 import Navbar from './navbar.svelte';
 import Product from './product.svelte';
 import SquareDiv from './squareDiv.svelte';
+import StickyBottom from './stickyBottom.svelte';
 
 export {
 	Carousel,
@@ -17,9 +18,10 @@ export {
 	HomeCategory,
 	LoadingScreen,
 	Menu,
-	MainCta,
+	Cta,
 	MenuLink,
 	Navbar,
 	Product,
-	SquareDiv
+	SquareDiv,
+	StickyBottom
 };

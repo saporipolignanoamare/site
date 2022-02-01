@@ -6,6 +6,8 @@
 	import SquareDiv from './squareDiv.svelte';
 </script>
 
+<!--  -->
+
 <div class="product">
 	<SquareDiv side="100%">
 		<div class="img-container">
@@ -21,6 +23,7 @@
 	<p class="price">{product?.fields?.prezzo}<span class="unit">€/kg</span></p>
 </div>
 
+<!--  -->
 <style>
 	.img-container {
 		width: 100%;

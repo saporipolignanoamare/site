@@ -4,27 +4,17 @@
 	export let icon: Function | null = null;
 </script>
 
-<div class="max-width">
-	<a {href} {rel} class="shadow">
-		{#if icon}
-			<svelte:component this={icon} style="margin-right: 10px" />
-		{/if}
-		<slot />
-	</a>
-</div>
+<a {href} {rel} class="shadow">
+	{#if icon}
+		<svelte:component this={icon} style="margin-right: 10px" />
+	{/if}
+	<slot />
+</a>
 
 <style>
-	div {
-		pointer-events: none;
-		position: sticky;
-		bottom: var(--spacing);
-		padding-right: calc(var(--spacing) * 0.75);
-		padding-bottom: var(--spacing);
-	}
-
 	a {
+		/* Serve perchè il contenitore per lo sticky avrà pointer-events: none */
 		pointer-events: auto;
-		margin-left: auto;
 
 		display: flex;
 		flex-flow: row nowrap;
@@ -40,8 +30,6 @@
 		width: fit-content;
 
 		white-space: nowrap;
-
-		margin-top: var(--spacing);
 	}
 
 	a:hover {
