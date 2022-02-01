@@ -3,5 +3,7 @@
 	"buy": "Buy",
 	"contacts": "Contacts",
 	"how": "How to purchase",
-	"textUs": "Text us!"
+	"textUs": "Text us!",
+	"404": "Page not found",
+	"back": "Go back to home page"
 }

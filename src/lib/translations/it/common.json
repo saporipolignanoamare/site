@@ -3,5 +3,7 @@
 	"buy": "Acquista",
 	"contacts": "Contatti",
 	"how": "Come acquistare",
-	"textUs": "Inviaci un messaggio!"
+	"textUs": "Inviaci un messaggio!",
+	"404": "Pagina non trovata",
+	"back": "Torna alla home"
 }
