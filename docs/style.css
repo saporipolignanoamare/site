@@ -2,7 +2,7 @@
 	--c-main: olive;
 
 	--c-accent: rgb(255, 217, 0);
-	--c-accent-hover: rgb(255, 196, 0);
+	--c-accent-hover: rgb(99, 91, 65);
 
 	--c-content-0-l: white;
 	--c-content-1-l: rgba(255, 255, 255, 0.6);
@@ -44,13 +44,13 @@
 @font-face {
 	font-family: Affogato;
 	font-weight: 500;
-	src: url(./fonts/Affogato-Medium.otf);
+	src: url(./_fonts/Affogato-Medium.otf);
 }
 
 @font-face {
 	font-family: Affogato;
 	font-weight: 700;
-	src: url(./fonts/Affogato-Bold.otf);
+	src: url(./_fonts/Affogato-Bold.otf);
 }
 
 /*  */
@@ -196,9 +196,9 @@ a {
 }
 
 .flag-it {
-	background-image: url('./images/flag-it.png');
+	background-image: url('./_images/flag-it.png');
 }
 
 .flag-en {
-	background-image: url('./images/flag-en.png');
+	background-image: url('./_images/flag-en.png');
 }
