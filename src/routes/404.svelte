@@ -42,5 +42,7 @@
 	h1 {
 		color: var(--c-main);
 		margin-bottom: var(--spacing);
+		text-align: center;
+		display: block;
 	}
 </style>

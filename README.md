@@ -1,6 +1,6 @@
 # Importante!
 
-Leggi i commenti nel file `finalize.sh`!
+Leggi i commenti nel file `finalize.sh`! (che è stato aggiunto allo script `npm run build`)
 
 ## Nota
 
