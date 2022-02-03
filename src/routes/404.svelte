@@ -2,9 +2,9 @@
 	import { browser } from '$app/env';
 	import { goto } from '$app/navigation';
 	import { categories, showLoading } from '$lib/stores';
-	import { t } from '$lib/translations';
-	import { Cta } from '$lib/components';
-	import { Undo24 } from '$lib/icons';
+	// import { t } from '$lib/translations';
+	// import { Cta } from '$lib/components';
+	// import { Undo24 } from '$lib/icons';
 
 	$showLoading = true;
 
@@ -15,22 +15,24 @@
 		if ($categories.map((c) => c.fields.slug).includes(param)) {
 			goto('/' + param);
 		} else {
-			$showLoading = false;
+			goto('/');
+			// $showLoading = false;
 		}
 	}
 </script>
 
 <!--  -->
 
-<div class="text-frame">
+<!-- <div class="text-frame">
 	{#if !$showLoading}
 		<h1>404 – {$t('common.404')} :(</h1>
 		<Cta href="/" icon={Undo24}>{$t('common.back')}</Cta>
 	{/if}
-</div>
+</div> -->
 
 <!--  -->
-<style>
+
+<!-- <style>
 	div {
 		height: 60vh;
 		display: flex;
@@ -45,4 +47,4 @@
 		text-align: center;
 		display: block;
 	}
-</style>
+</style> -->
