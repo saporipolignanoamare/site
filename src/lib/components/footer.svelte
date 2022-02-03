@@ -4,7 +4,7 @@
 	import { t } from '$lib/translations';
 
 	const obj = $numbers.fields.numeri;
-	const keys = Object.keys(obj);
+	const keys = Object.keys(obj).sort();
 </script>
 
 <!--  -->

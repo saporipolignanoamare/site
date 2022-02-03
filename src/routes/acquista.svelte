@@ -12,7 +12,7 @@
 
 	//
 
-	const telVito = $numbers.fields.numeri.Vito;
+	const tel = $numbers.fields.numeri.Andrea;
 
 	let promise: Promise<IAcquista>;
 	$: {
@@ -29,8 +29,6 @@
 		{@html documentToHtmlString(text.fields.testo)}
 	</div>
 	<StickyBottom>
-		<Cta rel="external" href="https://wa.me/{rws(telVito)}" icon={Phone24}
-			>{$t('common.textUs')}</Cta
-		>
+		<Cta rel="external" href="https://wa.me/{rws(tel)}" icon={Phone24}>{$t('common.textUs')}</Cta>
 	</StickyBottom>
 {/await}
