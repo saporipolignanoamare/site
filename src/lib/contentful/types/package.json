@@ -1,0 +1,18 @@
+{
+	"name": "types",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.ts",
+	"scripts": {
+		"types": "contentful-typescript-codegen --output ./index.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@contentful/rich-text-types": "^16.3.0",
+		"contentful": "^10.6.13",
+		"contentful-typescript-codegen": "^3.4.0",
+		"dotenv": "^16.3.1"
+	}
+}
