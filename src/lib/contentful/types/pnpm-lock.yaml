@@ -10,7 +10,7 @@ dependencies:
     version: 16.3.0
   contentful:
     specifier: ^10.6.13
-    version: 10.6.13
+    version: 10.6.14
   contentful-typescript-codegen:
     specifier: ^3.4.0
     version: 3.4.0(prettier@3.1.0)
@@ -169,8 +169,8 @@ packages:
       prettier: 3.1.0
     dev: false
 
-  /contentful@10.6.13:
-    resolution: {integrity: sha512-cTzAuFrNG8v8mPdfW4elaiRPR+c07UpmKuWxOIfnZpffIWTsxi6Hox9wrEOmy7qp1g9ycoPhfDdpv41YkJE0mA==}
+  /contentful@10.6.14:
+    resolution: {integrity: sha512-FbdT+ApX7W5r2OZ/6GfKRls8BjrVtJBl/0ijz9ZdzZ7jpZavyQTo9JshSWGk7aJAs8vFGGDkrpaWO1gxYdi/tg==}
     engines: {node: '>=12'}
     dependencies:
       '@contentful/rich-text-types': 16.3.0
@@ -178,7 +178,7 @@ packages:
       contentful-resolve-response: 1.8.1
       contentful-sdk-core: 8.1.2
       json-stringify-safe: 5.0.1
-      type-fest: 4.8.2
+      type-fest: 4.8.3
     transitivePeerDependencies:
       - debug
     dev: false
@@ -679,8 +679,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /type-fest@4.8.2:
-    resolution: {integrity: sha512-mcvrCjixA5166hSrUoJgGb9gBQN4loMYyj9zxuMs/66ibHNEFd5JXMw37YVDx58L4/QID9jIzdTBB4mDwDJ6KQ==}
+  /type-fest@4.8.3:
+    resolution: {integrity: sha512-//BaTm14Q/gHBn09xlnKNqfI8t6bmdzx2DXYfPBNofN0WUybCEUDcbCWcTa0oF09lzLjZgPphXAsvRiMK0V6Bw==}
     engines: {node: '>=16'}
     dev: false
 

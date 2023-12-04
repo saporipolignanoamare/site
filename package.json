@@ -13,7 +13,7 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"types": "cd src/lib/contentful/types && pnpm types"
+		"types": "contentful-typescript-codegen --output src/lib/contentful/types.d.ts"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
@@ -39,9 +39,6 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltejs/adapter-static": "^2.0.3",
-		"contentful": "^10.6.13",
-		"contentful-management": "^11.5.4",
-		"contentful-typescript-codegen": "^3.4.0",
-		"ts-node": "^10.9.1"
+		"contentful": "^10.6.13"
 	}
 }
