@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "index.ts",
 	"scripts": {
-		"types": "contentful-typescript-codegen --output ./index.d.ts"
+		"types": "contentful-typescript-codegen --output ./types.d.ts"
 	},
 	"keywords": [],
 	"author": "",

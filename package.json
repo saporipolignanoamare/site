@@ -3,8 +3,10 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
+		"predev": "pnpm types",
 		"dev": "vite dev",
 		"build": "vite build",
+		"prebuild": "pnpm types",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -13,7 +15,7 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"types": "contentful-typescript-codegen --output src/lib/contentful/types.d.ts"
+		"types": "cd src/lib/contentful/types && pnpm types"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
