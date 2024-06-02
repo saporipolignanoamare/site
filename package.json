@@ -3,10 +3,8 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"predev": "pnpm types",
 		"dev": "vite dev",
 		"build": "vite build",
-		"prebuild": "pnpm types",
 		"preview": "vite preview",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -14,33 +12,27 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
-		"test:unit": "vitest",
-		"types": "cd src/lib/contentful/types && pnpm types"
+		"test:unit": "vitest"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
-		"@sveltejs/adapter-auto": "^2.0.0",
-		"@sveltejs/kit": "^1.27.4",
-		"@typescript-eslint/eslint-plugin": "^6.0.0",
-		"@typescript-eslint/parser": "^6.0.0",
-		"autoprefixer": "^10.4.16",
-		"eslint": "^8.28.0",
-		"eslint-config-prettier": "^9.0.0",
-		"eslint-plugin-svelte": "^2.30.0",
-		"postcss": "^8.4.31",
-		"prettier": "^3.0.0",
-		"prettier-plugin-svelte": "^3.0.0",
+		"@sveltejs/adapter-auto": "^3.0.0",
+		"@sveltejs/kit": "^2.0.0",
+		"@sveltejs/vite-plugin-svelte": "^3.0.0",
+		"@types/eslint": "^8.56.7",
+		"eslint": "^9.0.0",
+		"eslint-config-prettier": "^9.1.0",
+		"eslint-plugin-svelte": "^2.36.0",
+		"globals": "^15.0.0",
+		"prettier": "^3.1.1",
+		"prettier-plugin-svelte": "^3.1.2",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
-		"tailwindcss": "^3.3.5",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
-		"vite": "^4.4.2",
-		"vitest": "^0.32.2"
+		"typescript-eslint": "^8.0.0-alpha.20",
+		"vite": "^5.0.3",
+		"vitest": "^1.2.0"
 	},
-	"type": "module",
-	"dependencies": {
-		"@sveltejs/adapter-static": "^2.0.3",
-		"contentful": "^10.6.13"
-	}
+	"type": "module"
 }
