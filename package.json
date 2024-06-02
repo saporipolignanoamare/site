@@ -13,7 +13,9 @@
 		"format": "prettier --write .",
 		"test:integration": "playwright test",
 		"test:unit": "vitest",
-		"types": "pnpx env-cmd -f .env node_modules/.bin/contentful-ts-generator -d -o src/lib/contentful/types"
+		"types": "pnpx env-cmd -f .env node_modules/.bin/contentful-ts-generator -d -o src/lib/contentful/types",
+		"postinstall": "pnpm types",
+		"prebuild": "pnpm types"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
