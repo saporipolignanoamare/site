@@ -1,0 +1,302 @@
+{
+  "contentTypes": [
+    {
+      "sys": {
+        "id": "acquista",
+        "type": "ContentType"
+      },
+      "displayField": null,
+      "name": "Acquista",
+      "description": "",
+      "fields": [
+        {
+          "id": "testo",
+          "name": "testo",
+          "type": "RichText",
+          "localized": true,
+          "required": false,
+          "validations": [
+            {
+              "enabledMarks": [
+                "bold",
+                "italic",
+                "underline",
+                "code"
+              ],
+              "message": "Only bold, italic, underline, and code marks are allowed"
+            },
+            {
+              "enabledNodeTypes": [
+                "heading-1",
+                "heading-2",
+                "heading-3",
+                "ordered-list",
+                "unordered-list",
+                "hr",
+                "blockquote",
+                "embedded-entry-block",
+                "embedded-asset-block",
+                "hyperlink",
+                "entry-hyperlink",
+                "asset-hyperlink",
+                "embedded-entry-inline"
+              ],
+              "message": "Only heading 1, heading 2, heading 3, ordered list, unordered list, horizontal rule, quote, block entry, asset, link to Url, link to entry, link to asset, and inline entry nodes are allowed"
+            },
+            {
+              "nodes": {}
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "categoria",
+        "type": "ContentType"
+      },
+      "displayField": "nomeCategoria",
+      "name": "Categoria",
+      "description": "",
+      "fields": [
+        {
+          "id": "nomeCategoria",
+          "name": "Nome categoria",
+          "type": "Symbol",
+          "localized": true,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "slug",
+          "name": "Slug",
+          "type": "Symbol",
+          "localized": false,
+          "required": true,
+          "validations": [
+            {
+              "unique": true
+            }
+          ],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "immagine",
+          "name": "immagine",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "ordine",
+          "name": "Ordine",
+          "type": "Integer",
+          "localized": false,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "prodotto",
+        "type": "ContentType"
+      },
+      "displayField": "nome",
+      "name": "Prodotto",
+      "description": "",
+      "fields": [
+        {
+          "id": "nome",
+          "name": "Nome",
+          "type": "Text",
+          "localized": true,
+          "required": true,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "prezzo",
+          "name": "Prezzo",
+          "type": "Number",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        },
+        {
+          "id": "foto",
+          "name": "Foto",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Asset"
+        },
+        {
+          "id": "categoria",
+          "name": "Categoria",
+          "type": "Link",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false,
+          "linkType": "Entry"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "telefono",
+        "type": "ContentType"
+      },
+      "displayField": null,
+      "name": "Telefono",
+      "description": "",
+      "fields": [
+        {
+          "id": "numeri",
+          "name": "numeri",
+          "type": "Object",
+          "localized": false,
+          "required": false,
+          "validations": [],
+          "disabled": false,
+          "omitted": false
+        }
+      ]
+    }
+  ],
+  "editorInterfaces": [
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "acquista",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "testo",
+          "widgetId": "richTextEditor"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "categoria",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "immagine",
+          "widgetId": "assetLinkEditor"
+        },
+        {
+          "fieldId": "nomeCategoria",
+          "widgetId": "singleLine"
+        },
+        {
+          "fieldId": "ordine",
+          "widgetId": "numberEditor"
+        },
+        {
+          "fieldId": "slug",
+          "settings": {
+            "trackingFieldId": "nomeCategoria"
+          },
+          "widgetId": "slugEditor"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "prodotto",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "categoria",
+          "settings": {
+            "showLinkEntityAction": true,
+            "showCreateEntityAction": false
+          },
+          "widgetId": "entryLinkEditor"
+        },
+        {
+          "fieldId": "foto",
+          "settings": {
+            "showLinkEntityAction": false,
+            "showCreateEntityAction": true
+          },
+          "widgetId": "assetLinkEditor"
+        },
+        {
+          "fieldId": "nome",
+          "widgetId": "multipleLine"
+        },
+        {
+          "fieldId": "prezzo",
+          "settings": {
+            "helpText": "Metti solo il numero, €/Kg verrà aggiunto automaticamente"
+          },
+          "widgetId": "numberEditor"
+        }
+      ]
+    },
+    {
+      "sys": {
+        "id": "default",
+        "type": "EditorInterface",
+        "contentType": {
+          "sys": {
+            "id": "telefono",
+            "type": "Link",
+            "linkType": "ContentType"
+          }
+        }
+      },
+      "controls": [
+        {
+          "fieldId": "numeri",
+          "widgetId": "objectEditor"
+        }
+      ]
+    }
+  ]
+}

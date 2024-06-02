@@ -1,0 +1,6 @@
+{
+	"compilerOptions": {
+		"verbatimModuleSyntax": false,
+		"lib": ["ES2015"]
+	}
+}
