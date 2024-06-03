@@ -44,6 +44,8 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@sveltejs/adapter-static": "^3.0.1",
+		"contentful": "^10.11.7",
 		"contentful-ts-generator": "^0.2.12",
 		"cross-env": "^7.0.3",
 		"env-cmd": "^10.1.0"
