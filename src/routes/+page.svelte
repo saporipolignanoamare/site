@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+	import { isAsset } from '$lib/contentful/types/index.js';
+
+	export let data;
+	let { categorie } = data;
+</script>
+
+{#each categorie as categoria}
+	{@const img = categoria.fields.immagine}
+	{#if isAsset(img)}
+		<img src={img.fields.file.url} alt="" />
+	{/if}
+{/each}
+<pre>{JSON.stringify(categorie, null, 2)}</pre>

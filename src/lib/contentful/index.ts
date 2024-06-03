@@ -1,40 +1,35 @@
-import type { ContentfulClientApi } from 'contentful';
+import type { ChainModifiers, ContentfulClientApi } from 'contentful';
 import { PUBLIC_CONTENTFUL_ACCESS_TOKEN, PUBLIC_CONTENTFUL_SPACE_ID } from '$env/static/public';
 import { type TypeDirectory, wrap, type ClassDirectory } from './types/generated';
+import { createContentfulClient, loadContentful, type Contentful } from './utils';
 
 //
 
 export class Db {
 	private static instance: Db;
+	private static client: ContentfulClientApi<undefined>;
 
-	private constructor() {}
-
-	static async createClient() {
-		const contentful_browser = await import(
-			// @ts-expect-error contentful_browser
-			'contentful/dist/contentful.browser'
-		);
-		const o: ContentfulClientApi<undefined> = contentful_browser.createClient({
-			accessToken: PUBLIC_CONTENTFUL_ACCESS_TOKEN,
-			space: PUBLIC_CONTENTFUL_SPACE_ID
+	private constructor() {
+		loadContentful().then((contentful) => {
+			Db.client = createContentfulClient(contentful);
 		});
-		return o;
 	}
 
 	//
 
-	// public static async getInstance(): Db {
-	// 	if (!Db.instance) {
-	// 		Db.instance = new Db();
-	// 	}
-	// 	return Db.instance;
-	// }
+	public static async load(): Promise<Db> {
+		if (!Db.client) Db.client = await Db.loadClient();
+		if (!Db.instance) Db.instance = new Db();
+		return Db.instance;
+	}
+
+	private static async loadClient() {
+		const contentful = await loadContentful();
+		return createContentfulClient(contentful);
+	}
 
 	async getEntries<T extends keyof TypeDirectory>(content_type: T) {
-		const client = await Db.createClient();
-		const entries = await client.getEntries({ content_type });
-		// const entries = await contentfulRequest(URL, { content_type });
-		// console.log(entries);
+		const entries = await Db.client.getEntries({ content_type });
 		return entries.items.map((item) => wrap(item) as ClassDirectory[T]);
 	}
 }

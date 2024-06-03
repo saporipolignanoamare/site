@@ -1,10 +1,10 @@
 import { Db } from '$lib/contentful';
 
 export const ssr = false;
+export const prerender = true;
 
 export const load = async () => {
-	const db = await Db.createClient();
-	// console.log(db);
-	const categorie = await db.getEntries('prodotto');
-	return { categorie: {} };
+	const db = await Db.load();
+	const categorie = await db.getEntries('categoria');
+	return { categorie };
 };
