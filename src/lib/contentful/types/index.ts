@@ -6,6 +6,6 @@ export { wrap } from './generated';
 
 export type KnownContentType = keyof TypeDirectory;
 
-//require('./ext')
+// require('./ext')
 // include this to extend the generated objects
 // require('./ext/menu')
